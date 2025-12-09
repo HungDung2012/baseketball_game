@@ -5,9 +5,9 @@ using UnityEngine;
 public class BasketballHoop : MonoBehaviour
 {
     [Header("Hoop Settings")]
-    public int pointsPerScore =1;
+    public int pointsPerScore = 1;
     public Vector3 ballResetPosition = new Vector3(0, 1.5f, 0);
-    public float resetDelay = 0.1f;
+    public float resetDelay = 0.01f;
     
     [Header("Visual Effects")]
     public ParticleSystem scoreEffect;

@@ -24,6 +24,7 @@ public class BallRespawner : MonoBehaviour
         
         // Spawn bóng đầu tiên
         SpawnBall();
+       
     }
     
     void Update()
