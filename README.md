@@ -1,8 +1,8 @@
-# 🏀 VR Basketball Game - Hướng Dẫn Setup
+# VR Basketball Game - Hướng Dẫn Setup
 
 Game bóng rổ VR cho Unity 2022.3.60f1 với XR Interaction Toolkit.
 
-## 📋 Các Script Đã Tạo
+## Các Script Đã Tạo
 
 1. **BasketballController.cs** - Điều khiển bóng rổ với VR
 2. **ScoreManager.cs** - Quản lý điểm số và combo
@@ -10,7 +10,7 @@ Game bóng rổ VR cho Unity 2022.3.60f1 với XR Interaction Toolkit.
 4. **ScoreUI.cs** - Hiển thị UI điểm số
 5. **BallRespawner.cs** - Respawn bóng khi rơi xuống
 
-## 🎮 Hướng Dẫn Setup Chi Tiết
+## Hướng Dẫn Setup Chi Tiết
 
 ### 1. Setup Bóng Rổ (Basketball)
 
@@ -191,15 +191,15 @@ BasketballHoop (Empty GameObject)
 
 
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 1. **Lỗi Input System (InvalidOperationException):**
-   - ❌ Lỗi: `You are trying to read Input using the UnityEngine.Input class, but you have switched active Input handling to Input System package`
-   - ✅ Fix tự động:
+   - Lỗi: `You are trying to read Input using the UnityEngine.Input class, but you have switched active Input handling to Input System package`
+   - Fix tự động:
      1. Vào menu: `Tools > Fix EventSystem for Input System`
      2. Click OK khi thấy thông báo
      3. Save scene (Ctrl+S)
-   - ✅ Fix thủ công:
+   - Fix thủ công:
      1. Tìm GameObject "EventSystem" trong Hierarchy
      2. Xóa component "Standalone Input Module"
      3. Add component: `Input System UI Input Module`
@@ -224,9 +224,9 @@ BasketballHoop (Empty GameObject)
    - Giảm Throw Force Multiplier
    - Tăng Drag của Rigidbody
 
-## 🎮 Hướng Dẫn Chơi Game (VR Controls)
+## Hướng Dẫn Chơi Game (VR Controls)
 
-#### **🎯 Kỹ Thuật Ném Hiệu Quả:**
+#### **Kỹ Thuật Ném Hiệu Quả:**
 
 1. **Ném Cơ Bản:**
    - Đứng trước rổ (khoảng 2-3m)
@@ -247,7 +247,7 @@ BasketballHoop (Empty GameObject)
    - Nhẹ nhàng đưa bóng lên cao và thả vào rổ
    - Không cần vung mạnh
 
-## 🎨 Next Steps
+## Next Steps
 
 1. Thêm visual effects (particles khi ghi điểm)
 2. Thêm nhiều rổ với khoảng cách khác nhau
