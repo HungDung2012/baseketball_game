@@ -5,9 +5,9 @@ using UnityEngine;
 public class BasketballHoop : MonoBehaviour
 {
     [Header("Hoop Settings")]
-    public int pointsPerScore = 2;
+    public int pointsPerScore =1;
     public Vector3 ballResetPosition = new Vector3(0, 1.5f, 0);
-    public float resetDelay = 2f;
+    public float resetDelay = 0.1f;
     
     [Header("Visual Effects")]
     public ParticleSystem scoreEffect;
@@ -34,10 +34,6 @@ public class BasketballHoop : MonoBehaviour
             }
             helper.hoopManager = this;
         }
-        else
-        {
-            Debug.LogError("Chưa gán Score Trigger Zone trong BasketballHoop! Kéo ScoreTrigger GameObject vào slot này!");
-        }
     }
     
     // Method công khai được gọi từ HoopTriggerHelper
@@ -52,23 +48,16 @@ public class BasketballHoop : MonoBehaviour
     
     private IEnumerator ScoreBasket(GameObject ball)
     {
-        Debug.Log("✅ GHI ĐIỂM! +" + pointsPerScore + " points");
-        
-        // Phát hiệu ứng
+        // Phát hiệu ứng khi bóng vào rổ
         if (scoreEffect != null)
         {
             scoreEffect.Play();
         }
         
-        // Thêm điểm
+        // Cập nhật điểm khi ném bóng vào rổ
         if (ScoreManager.Instance != null)
         {
             ScoreManager.Instance.AddScore(pointsPerScore);
-            Debug.Log($"💯 Score hiện tại: {ScoreManager.Instance.score}");
-        }
-        else
-        {
-            Debug.LogError("❌ KHÔNG TÌM THẤY ScoreManager.Instance! Kiểm tra ScoreManager GameObject trong scene!");
         }
         
         // Phát âm thanh swoosh từ bóng
@@ -99,22 +88,12 @@ public class HoopTriggerHelper : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log($"🎯 Trigger phát hiện: {other.gameObject.name}, Tag: {other.tag}");
-        
         if (other.CompareTag("Basketball"))
         {
             if (hoopManager != null)
             {
                 hoopManager.OnBallEnterHoop(other.gameObject);
             }
-            else
-            {
-                Debug.LogError("❌ HoopTriggerHelper: hoopManager = null!");
-            }
-        }
-        else
-        {
-            Debug.LogWarning($"⚠️ Object '{other.gameObject.name}' không có tag 'Basketball' (tag hiện tại: '{other.tag}')");
         }
     }
 }

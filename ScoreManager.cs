@@ -46,8 +46,6 @@ public class ScoreManager : MonoBehaviour
         // Load high score từ PlayerPrefs
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         
-        Debug.Log($"📊 ScoreManager initialized. High Score: {highScore}");
-        
         UpdateUI();
     }
     
@@ -63,14 +61,13 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int points)
     {
         // Tăng combo
-        currentCombo++;
         lastScoreTime = Time.time;
         
         // Tính điểm với combo multiplier
-        int comboBonus = currentCombo > 1 ? (currentCombo - 1) : 0;
+        int comboBonus = 0;
         int totalPoints = points + comboBonus;
         
-        score += totalPoints;
+        score += 1;
         
         // Cập nhật high score
         if (score > highScore)

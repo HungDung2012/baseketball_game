@@ -62,8 +62,7 @@ public class ScoreUI : MonoBehaviour
     
     private void EndGame()
     {
-        Debug.Log("Game Over! Final Score: " + (ScoreManager.Instance != null ? ScoreManager.Instance.score : 0));
-        // Có thể thêm UI game over ở đây
+
     }
     
     public void RestartGame()
